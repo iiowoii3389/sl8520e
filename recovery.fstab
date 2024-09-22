@@ -1,24 +1,15 @@
-/spl               mtd       splloader                             flags=display=spl
-/uboot             mtd       uboot                                 flags=display=uboot
-/productinfo       ubifs     prodnv                                flags=display=productinfo
-/miscdata          ubi       miscdata                              flags=display=miscdata
-/ltefixnv1         ubi       l_fixnv1                              flags=display=ltefixnv1
-/ltefixnv2         ubi       l_fixnv2                              flags=display=ltefixnv2
-/lteruntimenv1     ubi       l_runtimenv1                          flags=display=lteruntimenv1
-/lteruntimenv2     ubi       l_runtimenv2                          flags=display=lteruntimenv2
-/ltemodem          ubi       l_modem                               flags=display=ltemodem
-/ltedsp            ubi       l_ldsp                                flags=display=ltedsp
-/ltegdsp           ubi       l_gdsp                                flags=display=ltegdsp
-/pmsys             ubi       pm_sys                                flags=display=pmsys
-/logo              ubi       logo                                  flags=display=logo
-/fbootlogo         ubi       fbootlogo                             flags=display=fbootlogo
-/wcnfdl            ubi       wcnfdl                                flags=display=wcnfdl
-/wcnmodem          ubi       wcnmodem                              flags=display=wcnmodem
-/gnssmodem         ubi       gpsgl                                 flags=display=gnssmodem
-/gnssbdmodem       ubi       gpsbd                                 flags=display=gnssbdmodem
-/boot              ubi       boot                                  flags=display=boot
-/system            ubifs     system                                flags=display=system
-/cache             ubifs     cache                                 flags=display=cache
-/recovery          ubi       recovery                              flags=display=recovery
-/misc              ubi       misc                                  flags=display=misc
-/data              ubifs     userdata                              flags=display=data
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+# <src>                                         <mnt_point>  <type>  <mnt_flags and options>             <fs_mgr_flags>
+
+/dev/block/platform/soc/by-name/system   /system      ext4 ro,barrier=1                          wait
+#/dev/block/platform/soc/by-name/vendor   /vendor      ext4 ro,barrier=1                          wait
+/dev/block/platform/soc/by-name/userdata /data        ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,encryptable=footer,check
+/dev/block/platform/soc/by-name/cache    /cache       ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check
+/devices/platform/soc/soc:ap-ahb/20200000.usb/musb-hdrc.0.auto/usb*      auto         vfat defaults voldmanaged=usbdisk:auto
+/devices/platform/soc/soc:ap-ahb/20300000.sdio/mmc_host/mmc1/mmc1:*/block/mmcblk1*      auto         vfat defaults voldmanaged=sdcard0:auto,noemulatedsd,encryptable=footer
+/dev/block/platform/soc/by-name/prodnv   /productinfo ext4 noatime,nosuid,nodev,nomblk_io_submit,noauto_da_alloc wait,check
+/dev/block/platform/soc/by-name/misc     /misc        emmc    defaults    defaults
+#/dev/block/memdisk.0    /system      ext4 rw,barrier=1                          wait
+#/dev/block/memdisk.1    /data        ext4 noatime,nosuid,nodev,noauto_da_alloc,journal_async_commit,errors=panic wait
