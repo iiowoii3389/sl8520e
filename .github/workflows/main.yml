@@ -52,5 +52,5 @@ jobs:
           cp out/target/product/sl8521e_1h10ll_sw205/recovery.img ../twrp-${twrp_version}_0-sl8521e_1h10ll_sw205.img
       - uses: actions/upload-artifact@v3
         with:
-          name: TWRP Image for MiKids4
+          name: TWRP Image for Teemo Q1
           path: 'twrp-*_sw205.img'
