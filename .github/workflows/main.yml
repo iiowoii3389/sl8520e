@@ -38,7 +38,7 @@ jobs:
       - name: Setup device
         uses: actions/checkout@v3
         with:
-          path: 'twrp/device/Xiaoxun/sl8521e_1h10ll_sw205'
+          path: 'twrp/device/teemo/sl8521e_1h10ll_sw205'
       - name: Build
         shell: bash
         run: |
