@@ -52,8 +52,6 @@
 /dev/sprd_cpp           0660     system      camera
 /dev/rtc0               0660     system      system
 
-/dev/qmax981         0660     system     input
-
 
 /sys/devices/system/cpu/cpu* /cpufreq/interactive/boost 0660 media system
 /sys/devices/system/cpu/cpu* /cpufreq/interactive/boostpulse 0660 system system
@@ -74,4 +72,4 @@
 /sys/class/xr-gsensor/device/delay_acc      0660  system   input
 /sys/class/xr-pls/device/als      0660  system   input
 /sys/class/xr-pls/device/proximity      0660  system   input
-
+/dev/qmax981         0660     system     input
