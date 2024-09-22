@@ -1,11 +1,8 @@
-LOCAL_PATH := device/teemo/sl8521e_1h10ll_sw205
+#
+# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,device/teemo/sl8521e_1h10ll_sw205/recovery/root,root)
-
-PRODUCT_COPY_FILES += \
-    device/teemo/sl8521e_1h10ll_sw205/prebuilt/kernel:kernel
-
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-PRODUCT_NAME := sl8521e_1h10ll_sw205
+LOCAL_PATH := device/teemo/sl8521e_1h10ll_watch_sw205

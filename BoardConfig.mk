@@ -1,4 +1,11 @@
-LOCAL_PATH := device/teemo/sl8521e_1h10ll_sw205
+#
+# Copyright (C) 2024 The Android Open Source Project
+# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+DEVICE_PATH := device/teemo/sl8521e_1h10ll_watch_sw205
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -34,7 +41,7 @@ BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_SEPARATED_DT := true
 TARGET_KERNEL_CONFIG := sl8521e_1h10ll_watch_sw205_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaoxun/sl8521e_1h10ll_watch_sw205
+TARGET_KERNEL_SOURCE := kernel/teemo/sl8521e_1h10ll_watch_sw205
 
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
@@ -72,12 +79,8 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
-TW_EXTRA_LANGUAGES := true
 TW_THEME := watch_mdpi
+TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_INCLUDE_NANO := true
-TW_INCLUDE_SUPERSU := true
-TW_DEFAULT_LANGUAGE := zh-CN
 TW_USE_TOOLBOX := true
