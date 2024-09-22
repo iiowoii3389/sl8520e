@@ -1,0 +1,2 @@
+add_lunch_combo omni_sl8521e_1h10ll_sw205-eng
+add_lunch_combo omni_sl8521e_1h10ll_sw205-userdebug
