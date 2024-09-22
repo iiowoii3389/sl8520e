@@ -38,7 +38,7 @@ jobs:
       - name: Setup device
         uses: actions/checkout@v3
         with:
-          path: 'twrp/device/teemo/sl8521e_1h10ll_sw205'
+          path: 'twrp/device/teemo/sl8521e_1h10ll_watch_sw205
       - name: Build
         shell: bash
         run: |
@@ -46,11 +46,11 @@ jobs:
           sudo ln -sf /usr/bin/python2.7 /usr/bin/python
           cd $GITHUB_WORKSPACE/twrp
           source build/envsetup.sh
-          lunch omni_sl8521e_1h10ll_sw205-eng
+          lunch omni_sl8521e_1h10ll_watch_sw205-eng
           mka -j$(nproc --all) recoveryimage
           export twrp_version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-          cp out/target/product/sl8521e_1h10ll_sw205/recovery.img ../twrp-${twrp_version}_0-sl8521e_1h10ll_sw205.img
+          cp out/target/product/sl8521e_1h10ll_sw205/recovery.img ../twrp-${twrp_version}_0-sl8521e_1h10ll_watch_sw205.img
       - uses: actions/upload-artifact@v3
         with:
-          name: TWRP Image for Teemo Q1
+          name: TWRP Image for Teemo sw205
           path: 'twrp-*_sw205.img'
