@@ -23,6 +23,5 @@ PRODUCT_MANUFACTURER := teemo
 PRODUCT_GMS_CLIENTID_BASE := android-teemo
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="sl8521e_2h10ll_watch_sw772_native-user 4.4.4 KTU84P_T14A0616 282"
-
-BUILD_FINGERPRINT := SPRD/sl8521e_2h10ll_watch_sw772_native/sl8521e_2h10ll_watch_sw772:4.4.4/KTU84P/282:user/test-keys
+    PRIVATE_BUILD_DESC="sl8521e_1h10ll_watch_native-user 4.4.4 KTU84P eng..20200831.013020 test-keys" \
+    BUILD_FINGERPRINT="SPRD/sl8521e_1h10ll_watch_native/sl8521e_1h10ll_watch:4.4.4/KTU84P/eng..20200831.013020:user/test-keys"
